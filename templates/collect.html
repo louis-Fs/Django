@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>网络空间安全学院学生信息注册</title>
+	<link rel="stylesheet" href={%  static 'css_js/js2.css'%} type="text/css">
+     <link rel="shortcut icon" href={% static 'pic/favicon.png'%}>
+</head>
+<center>
+    <h1>网络空间安全学院学生信息注册</h1>
+</center>
+<body>
+    <center>
+        <div style=" height:200px;width:330px">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="200px" width="330px" background-color="red">
+                <rect width="330px" height="200px" style="fill: red" />
+                <polygon points="50,10 20,80 90,35 10,35 80,80" style="fill: yellow" />
+                <polygon points="111,3 100,27 124,12 97.3,12 121,27" style="fill: yellow" />
+                <polygon points="134,28 123,52 147,37 120.3,37 144,52" style="fill: yellow" />
+                <polygon points="134,63 123,87 147,72 120.3,72 144,87" style="fill: yellow" />
+                <polygon points="111,87 100,112 124,98 97.3,98 121,112" style="fill: yellow" />
+            </svg>
+        </div>
+            <h5>加*为必填</h5>
+            <form action="/collect/" method="POST" name="from" target="keep"  onsubmit="return check()">
+                {% csrf_token %}
+                <table border="1" width="600px">
+                    <tr>
+                        <th>名称</th>
+                        <td><input type="text" name="lg" id="" onblur="user()"><text class="text">*{{ war }}</text></td>
+						
+                    </tr>
+                    <tr>
+                        <th>密码</th>
+                        <td><input type="password" name="pass" onblur=" ps() "><text class="text">*</text></td>
+                    </tr>
+					<tr>
+                        <th>邮箱</th>
+                        <td><input type="text" name="emi" onblur="emil()"><text class="text">*</text></td>
+                    </tr>
+
+                    <tr>
+                        <th>个人描述</th>
+                        <td>
+                            <textarea name="txt" rows="4" cols="30" ></textarea>
+                            <text class="text"></text>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>性别</th>
+                        <td>
+                            <input type="radio" name="sex" value="男" onclick="se()"/>男
+                            <input type="radio" name="sex" value="女" onclick="se()"/> 女
+                             <input type="radio" name="sex" value="they" onclick="se()"/> THEY
+                            <text class="text">*</text>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>年级</th>
+                        <td>
+                            <select name="grade" size="1" onclick="gra()" >
+                                <option value="大一" > 大一</option>
+                                <option value="大二" > 大二</option>
+                                <option value="大三" > 大三</option>
+                                <option value="大四" > 大四</option>
+                                <option value="其它" > 其它</option>
+                            </select>
+                            <text class="text">*</text>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>详细信息</th>
+                        <td>
+                                <label>电话:<br /><input type="text" name="phone" onblur="phon()">
+                                    <text class="text">*</text>
+                                </label>
+                            <br />
+                        <!--    </td>
+                        <td>-->
+                                <label>通讯地址:<br /><input type="text" name="address" onblur="addre()">
+                                    <text class="text">*</text>
+                                </label>
+
+                        </td>
+                    </tr>
+					<tr>
+                        <th></th>
+                        <td>
+                            <input type="submit" value="提交">
+                        </td>
+                    </tr>
+                    <table border="1">
+
+     </table>
+                </table>
+            </form>
+			<iframe id="id_iframe" name="Keep" style="display:none;"></iframe>
+    </center>
+	<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+	<script src={%  static 'css_js/js2.js'%}></script>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+  <html>
+  <head lang="en">
+      <meta charset="UTF-8">
+      <title>Django表单</title>
+  </head>
+  <body>
+ <table border="1">
+         <tr>
+             <th>用户名</th>
+             <th>年级</th>
+            <th>密码</th>
+            <th>性别</th>
+             <th>邮件</th>
+             <th>介绍</th>
+             <th>电话</th>
+             <th>地址</th>
+        </tr>
+    {% for li in lit %}
+         <tr>
+             <td>{{ li.username }}</td>
+              <td>{{ li.grade }}</td>
+            <td>{{ li.password }}</td>
+            <td>{{ li.sex }}</td>
+             <td>{{ li.email }}</td>
+             <td>{{ li.intro }}</td>
+             <td>{{ li.phone }}</td>
+             <td>{{ li.address }}</td>
+         </tr>
+    {% endfor %}
+     <tr>
+         {%for line in date %}
+                    <a href={{ line.href_1 }}> <p>{{ line.cday }}{{ line.tit_1 }}<span>{{ line.date_1 }}</span> </p></a>
+                    {% endfor %}
+     </tr>
+ <tr>
+     {%for line in data2 %}
+                    <a href={{ line.hre_f }}> <p>{{ line.cday }}{{ line.titl_e }}<span>{{ line.pic_url }}</span> </p></a>
+                    {% endfor %}
+ </tr>
+ <tr>
+     {%for line in data3 %}
+                    <a href={{ line.hre_f }}> <p>{{ line.cday }}{{ line.titl_e }}<span>{{ line.pic_url }}</span> </p></a>
+                    {% endfor %}
+ </tr>
+      <a href={{ data31.hre_f }}> <p>{{ data31.cday }}{{ data31.titl_e }}<span>{{ data31.pic_url }}</span> </p></a>
+     </table>
+
+ </body>
+</html>

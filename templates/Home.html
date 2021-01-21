@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+	{% for homedata in homedata %}
+        {{ homedata.username }}
+        {% endfor %}
+	的主页
+	</title>
+    <link rel="stylesheet" href={% static 'css_js/richpage.css' %} type="text/css">
+</head>
+
+<body>
+	<div class="wrapper">
+    <header class="header">
+        <div id="headerd1">
+            <img src={% static 'pic/logo.png' %} id="pic" title="logo">
+            <img src={% static 'pic/photo.JPG' %} id="pic2" title="personal photo">
+            <div id="name">
+                {% for homedata in homedata %}
+                {{ homedata.username }}
+                {% endfor %}
+                </br>个人主页</div>
+            <div id="xueyuan">四川大学</br>网络空间安全学院</div>
+            <img src={% static 'pic/plan.png' %} id="pic3" title="卓越人才计划">
+        </div>
+        <hr />
+        <div id="headerd2">
+            <div id="juzhong">
+                <div id="link1"><a href="/scumainpage/" target="_blank">四川大学新闻概述</a></div>
+                <div id="link1" style=""><a href="http://202.115.35.26:8080/login" target="_blank">本科生教务处登录</a></div>
+                <div id="link1"><a href="http://cc.scu.edu.cn/G2S/Showsystem/Index.aspx" target="_blank">四川大学课程中心</a></div>
+                <div id="link1"><a href="http://ccs.scu.edu.cn/" target="_blank">网络空间安全学院</a></div>
+                <div id="link1"><a href="http://csri.scu.edu.cn/" target="_blank">川大网安研究院</a></div>
+            </div>
+        </div>
+        <hr />
+    </header>
+    <div id="cont">
+        <div id="asl">
+            <div id="asl1">
+                <img src={% static 'pic/link.png' %}>
+                <text>友情链接</text>
+            </div>
+            <div id="asl2">
+                <ul>
+                    <li><a href="http://school.ci123.com/firms-index/142276" target="_blank"
+                            style="text-decoration:none">我的小学</a></li>
+                    <br />
+                    <li><a href="http://www.dzmryzx.com/" target="_blank" style="text-decoration:none">我的中学</a></li>
+                    <br />
+                    <li><a href="http://www.scu.edu.cn/" target="_blank" style="text-decoration:none">我的大学</a></li>
+                    <br />
+                    <li><a href="https://weibo.com/u/6985334889" target="_blank" style="text-decoration:none">我的微博</a>
+                    </li>
+                    <br />
+                    <li><a href="http://344735074.qzone.qq.com" target="_blank" style="text-decoration:none">我的空间</a>
+                    </li>
+                    <br />
+                    <li><a href="http://www.cac.gov.cn/" target="_blank" style="text-decoration:none">中国网信办</a></li>
+                    <br />
+                    <li><a href="http://www.moe.gov.cn/" target="_blank" style="text-decoration:none">中国教育部</a></li>
+                    <br />
+                    <li><a href="http://www.most.gov.cn/" target="_blank" style="text-decoration:none">中国科技部</a></li>
+                </ul>
+            </div>
+        </div>
+        <section>
+            <div id="s1">个人介绍</div>
+            <div id="s2">
+                {% for homedata in homedata %}
+                <p>姓名：{{ homedata.username }}<br />学历: 本科生<br />专业：网络空间安全<br />性别: {{ homedata.sex }}
+                    <br /> 邮箱：{{ homedata.email }}<br/> 自我介绍：{{ homedata.intro }}<br/>电话：{{ homedata.phone }}
+                    <br /> 年级：{{ homedata.grade }}<br/> 地址：{{ homedata.address }}<br/>
+                </p>
+                {% endfor %}
+            </div>
+            <div id="s3">
+                <hr />
+                <p>故今日之责任，不在他人，而全在我少年。少年智则国智，少年
+                    富则国富；少年强则国强，少年独立则国独立；少年自由则国自由，少年进步则国进步；少年胜于欧洲则国胜于欧洲，少年雄于地球则国雄于地球。
+                    红日初升，其道大光。河出伏流，一泻汪洋。潜龙腾渊，鳞爪飞扬。乳虎啸谷，百兽震惶。鹰隼试翼，风尘吸张。奇花初胎，矞矞皇皇。干将发硎，有作其芒。天戴其苍，地履其黄。纵有千古，横有八荒。前途似海，
+                    来日方长。美哉我少年中国，与天不老！壮哉我中国少年，与国无疆！</p>
+            </div>
+        </section>
+        <div id="asr">
+            <div id="r1">
+                <img src={% static 'pic/notice.png' %}>
+                <text>最近动态</text>
+            </div>
+            <div id="r2">
+                <ol>
+                    <li>信安作业</li>
+                    <br />
+                    <li>离散作业</li>
+                    <br />
+                    <li>数电作业</li>
+                    <br />
+                    <li>数构作业</li>
+                    <br />
+                    <li>练鼓</li>
+                    <br />
+                    <li>物理作业</li>
+                    <br />
+                    <li>web作业</li>
+                    <br />
+                    <li>CTF比赛</li>
+                    <br />
+                    <li>英语作业</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <footer>Copyright © 1999-2100 All Rights Reserved - 冯孙</footer>
+    <hr />
+	</div>
+</body>
+
+</html>
